@@ -35,6 +35,32 @@ cd frontend
 npm run dev
 ```
 
+## Deployment
+
+This project is configured for easy deployment on [Render](https://render.com/).
+
+### Option 1: Using Blueprints (Automated)
+
+1. Connect your GitHub repository to Render.
+2. Render will automatically detect the `render.yaml` file.
+3. Follow the prompts to deploy both the backend and frontend.
+
+### Option 2: Manual Deployment
+
+If you want to deploy services separately:
+
+#### Backend (Django)
+- **Service Type**: Web Service
+- **Root Directory**: `backend`
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `python manage.py runserver 0.0.0.0:$PORT` (For production, use `gunicorn`)
+
+#### Frontend (Next.js)
+- **Service Type**: Web Service
+- **Root Directory**: `frontend`
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: `npm start`
+
 ## License
 
 All rights reserved.

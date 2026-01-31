@@ -1,0 +1,30 @@
+services:
+  # Backend (Django)
+  - type: web
+    name: smart-forestry-backend
+    env: python
+    region: ohio
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py runserver 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DEBUG
+        value: "False"
+
+  # Frontend (Next.js)
+  - type: web
+    name: smart-forestry-frontend
+    env: node
+    region: ohio
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.0.0
+      - key: NEXT_PUBLIC_API_URL
+        value: https://smart-forestry-backend.onrender.com/api/
