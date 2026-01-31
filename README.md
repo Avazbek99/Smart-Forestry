@@ -52,8 +52,8 @@ If you want to deploy services separately:
 #### Backend (Django)
 - **Service Type**: Web Service
 - **Root Directory**: `backend`
-- **Build Command**: `pip install -r requirements.txt`
-- **Start Command**: `python manage.py runserver 0.0.0.0:$PORT` (For production, use `gunicorn`)
+- **Build Command**: `pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput`
+- **Start Command**: `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
 
 #### Frontend (Next.js)
 - **Service Type**: Web Service

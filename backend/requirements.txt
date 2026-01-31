@@ -8,5 +8,7 @@ django-extensions
 drf-yasg
 django-leaflet
 Pillow
+gunicorn
+whitenoise
 # GeoDjango dependencies
 # Note: On Windows, GDAL must be installed separately
