@@ -8,13 +8,16 @@ Smart-Forestry is a comprehensive platform for forest management and monitoring,
 - **Frontend**: Modern, responsive interface built with Next.js and Tailwind CSS.
 - **Management**: Unified dashboard for admins and users.
 
-## How to Run
+## How to Run (Local Development Only)
 
-To start both the backend and frontend simultaneously, use the provided `run.py` script:
+To start both the backend and frontend simultaneously on your **local machine**, use the provided `run.py` script:
 
 ```bash
 python run.py
 ```
+
+> [!CAUTION]
+> **Do not use `run.py` for deployment on Render.** Render requires separate services for the backend and frontend. Follow the [Deployment](#deployment) section below for production.
 
 ### Prerequisites
 
